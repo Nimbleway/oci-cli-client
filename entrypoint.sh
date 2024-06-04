@@ -5,8 +5,11 @@ then
     echo "OCI CLI not found, installing..."
     # Install OCI CLI
     sudo apt-get update
+    sudo apt install software-properties-common -y
     sudo apt-get install python3 python3-pip jq -y
-    sudo python3.8 -m pip install --upgrade pip
+    sudo python3 -m pip install --upgrade pip
+    python3 --version
+    pip3 --version
 else
     echo "OCI CLI is already installed"
 fi
