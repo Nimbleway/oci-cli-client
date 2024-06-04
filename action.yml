@@ -1,0 +1,9 @@
+name: Oci Cli Install
+description: Oci Cli Install
+author: Eyal Halfon
+runs:
+  using: node16
+  main: main.js
+branding:
+  icon: upload-cloud
+  color: green
