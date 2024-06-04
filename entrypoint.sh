@@ -2,16 +2,18 @@
 
 if ! command -v python &> /dev/null
 then
-    echo "OCI CLI not found, installing..."
+    echo "python not found, installing..."
     # Install OCI CLI
+    sudo rm -f /etc/apt/sources.list.d/docker.list /etc/apt/sources.list.d/kubernetes.list
+    sudo add-apt-repository ppa:deadsnakes/ppa -y
     sudo apt-get update
     sudo apt install software-properties-common -y
     sudo apt-get install python3 python3-pip jq -y
-    sudo python3 -m pip install --upgrade pip
+    #sudo python3 -m pip install --upgrade pip
     python3 --version
     pip3 --version
 else
-    echo "OCI CLI is already installed"
+    echo "python is already installed"
 fi
 
 if ! command -v oci &> /dev/null
